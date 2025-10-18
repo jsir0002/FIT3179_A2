@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Australians' Sunburn Levels By State/Territory",
+  "data": {
+    "url": "data/abs_sunburn.csv"
+  },
+  "width": 800,
+  "height": 450,
+  "params": [
+    {
+      "name": "filter_type",
+      "value": "Victoria",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Victoria",
+          "New South Wales",
+          "Queensland",
+          "South Australia",
+          "Western Australia",
+          "Tasmania",
+          "Northern Territory"
+        ],
+        "name": "Filter by State/Territory: "
+      }
+    }
+  ],
+  "transform": [
+    {
+   
+      "filter": "datum.State == filter_type" 
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "Type",
+      "type": "nominal",
+      "title": "Sunburn Level"
+    },
+    "x": {
+      "field": "Percentage(%)",
+      "type": "quantitative",
+      "title": "Percentage (%)"
+    }
+  }
+}

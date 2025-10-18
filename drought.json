@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "data/drought.csv"
+  },
+  "width": 800,
+  "height": 450,
+  "title": "Water Source Usage",
+
+  "transform": [
+    {
+      "filter": "datum.Category !== 'Reticulated mains' && datum.Category !== 'Recycled'"
+    }
+  ],
+
+  
+  "mark": "bar",
+  "encoding": 
+  {
+    "x": {
+      "field": "Category",
+      "type": "nominal",
+      "title": "Water Source",
+      "axis": {"labelAngle": 0}
+    },
+
+    "y": {
+      "field": "Megalitres",
+      "type": "quantitative",
+      "title": "Total Megalitres", 
+      "axis": {"format": "s"}
+    },
+
+    "color": {
+      "field": "Year",
+      "type": "nominal",
+      "legend": {"title": "Year"}
+    },
+    
+    "tooltip": [
+      {"field": "Year"},
+      {"field": "Category"},
+      {"field": "Megalitres", "format": ","}
+    ]
+  }
+}

@@ -1,7 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Line chart with annotation for a specific year.",
-  "title": "Total Fire Area in Australia",
   "width": 800,
   "height": 450,
   "data": {
@@ -10,11 +9,6 @@
       "type": "csv"
     }
   },
-  "transform": [
-    {
-      "filter": "year(datum.year_lvl) >= 2010 && year(datum.year_lvl) <= 2020"
-    }
-  ],
   "encoding": { 
     "x": {
       "field": "year_lvl",
@@ -39,7 +33,7 @@
   },
   "layer": [
     {
-      "mark": {"type": "area", "opacity": 0.3, "color": "black"}
+      "mark": {"type": "area", "opacity": 0.7, "color": "black"}
     },
     {
       "mark": {"type": "line", "strokeWidth": 2, "color": "black"}

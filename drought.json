@@ -3,9 +3,8 @@
   "data": {
     "url": "data/drought.csv"
   },
-  "width": 800,
+  "width": 700,
   "height": 450,
-  "title": "Water Source Usage",
 
   "transform": [
     {
@@ -34,7 +33,8 @@
     "color": {
       "field": "Year",
       "type": "nominal",
-      "legend": {"title": "Year"}
+      "legend": {"title": "Year"},
+      "scale": {"range": ["#cccccc", "#525252"]}
     },
     
     "tooltip": [

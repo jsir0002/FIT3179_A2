@@ -7,29 +7,197 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    <title>FIT3179 Week 10 Homework</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.2.4/build/pure-min.css">
+    <title>FIT3179 Data Visualisation Assignment 2</title>
 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #c7c7c7;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .pure-g {
+            margin-bottom: 40px;
+        }
+
+        .intro-container {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            text-align: left;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px; /* limit width */
+            margin: 0 auto;   /* center horizontally */
+        }
+
+        .pure-u-1 {
+            text-align: center;
+        }
+
+        .chart-description {
+            text-align: left;
+            margin-top: 15px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .conclusion-container {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            text-align: left;
+            font-size: 20px;
+            color: #333;
+        }
+        
+        .apa-reference {
+            padding-left: 2em; 
+            text-indent: -2em;
+            margin-bottom: 1em;
+        }
+    </style>
 </head>
+
 <body>
     <h1>The Impact of Weather on Australia's Economy</h1>
-        <div id="avgtemp_aus">
-        </div>
-        
-        <div id="totalfirearea">
-        </div>
 
-        <div id="drought">
-        </div>
+    <div class="intro-container">
+        <p>
+            The changing weather patterns in Australia have had a profound influence on the nation’s economy, affecting industries such as 
+            agriculture, livestock, and even skin health. 
+            <br><br>
+            The following visualisations explore how weather and climate have influenced Australia’s economy over time.
+        </p>
+    </div>
 
-        <div id="bananas">
+    <div class="pure-g">
+        <div class="pure-u-1 chart-container">
+            <h2>Average Monthly and Annual Maximum Temperatures in Australia</h2>
+            <div id="avgtemp_aus"></div>
+            <p class="chart-description">
+                This chart shows the average monthly and annual maximum temperatures across Australia.
+                Use the dropdown to explore temperature variations by month.
+                <br>
+                As you can see, the temperature tends to rise as we move from south to north. We will be exploring how these temperature changes impact various sectors of Australia's economy.
+            </p>
         </div>
+    </div>
 
-        <div id="livestock">
+    <div class="pure-g">
+        <div class="pure-u-1 chart-container">
+            <h2>Total Fire Area in Australia</h2>
+            <div id="totalfirearea"></div>
+            <p class="chart-description">
+                The total fire area represents the amount of area in which bushfires have covered in Australia in a year. 
+                Increasing trends may indicate rising fire risks due to hotter, drier conditions that amplify the likelihood of bushfires occurring. 
+                2015-2016 saw the highest total fire area, coinciding with a severe El Niño event that brought hotter and drier conditions to much of Australia. 
+                This included 4 notable bushfires that impacted Western Australia, South Australia, and Victoria.
+            </p>
         </div>
+    </div>
 
-        <div id="sunburn">
+    <div class="pure-g">
+        <div class="pure-u-1 chart-container">
+            <h2>The Impact of Drought on Water Usage in Australia</h2>
+            <div id="drought"></div>
+            <p class="chart-description">
+                This captures the change in water usage over time between different water sources during the 2017-2019 drought.
+                The only water source that saw an increase in usage in this period was groundwater, likely due to reduced surface water availability from the drought
+                which would've dried up rivers and reservoirs that are commonly used for water supply.
+            </p>
         </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-1 chart-container">
+            <p><strong>Customer Price Index (CPI)</strong> is a metric used to measure the average change over time in the prices paid by consumers for goods and services. <strong> CPI starts at 100 in the base year and a CPI of 150 indicates that prices have increased by 50% since the base year.</strong></p>
+            <h2>Cyclone Yasi and Banana Prices in Australia</h2>
+            <div id="bananas"></div>
+            <p class="chart-description">
+                <strong>Cyclone Yasi (2011)</strong> landed in Queensland and caused a lot of destruction to the environment. This visualisation explores how Cyclone Yasi impacted banana prices in Australia.
+                The sudden spike in the Customer Price Index (CPI) for bananas after the landing of the cyclone indicates a significant increase in banana prices, likely due to the disruption in supply caused by the cyclone.
+                Several reasons include damage to banana crops which reduced supply, increased transportation costs due to damaged infrastructure as well as increased customer demands due to the shortage of bananas.
+                Even after the immediate aftermath of Cyclone Yasi, banana prices remained very high for almost a year implying the devastating impacts of natural disasters on agricultural produce and prices.
+            </p>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-1 chart-container">
+            <h2>Drought and its Impact on Livestock Revenue</h2>
+            <div id="livestock"></div>
+            <p class="chart-description">
+                After the drought in 2019, the revenue from livestock and livestock products became very volatile.
+                This is likely due to the reduced availability of water and feed for livestock during drought conditions, resulting in reduced
+                producer confidence where they felt the need to supply more livestock to the processors to offset losses from drought conditions.
+                This has also affected wool revenue as sheep farmers may have had to sell off their sheep earlier than planned and also a decrease in the wool's quality from the reduced availability of water and feed.
+                To examine the trends more closely, you can filter to select a specific export type.
+            </p>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-1 chart-container">
+            <h2>How is the Sun affecting Australians' Skin?</h2>
+            <p>This explores the percentage of Australians who have been <span style="color: #fd8d3c;">sunburnt</span> and those who have <span style="color: #ffeda0;">not been sunburnt</span>. Use the dropdown menu to view different State/Territory's percentages.</p>
+            <div id="sunburn"></div>
+            <p class="chart-description">
+                Surprisingly, Tasmania has the highest percentage of sunburnt individuals despite it having the lowest average maximum temperature out of all the states/territories. This could be due to several factors
+                such as sun protection habits and high UV levels during summer months that Tasmanians may not be aware of due to the generally cooler climate. As expected the next highest
+                percentages of sunburnt individuals are in the warmer states/territories such as Queensland, Northern Territory and Western Australia where people are more exposed to higher temperatures and UV levels that are apparent in these regions.
+            </p>
+        </div>
+    </div>
+
+    <div class="conclusion-container">
+        <p>
+            Created by Jay Sirachantanakorn 19/10/2025
+            <br>
+            Data Sources:
+            <ul>
+                <li class="apa-reference">
+                    Climate Change in Australia. (2025). <i>NRM CMIP5 Future Climatological Averages (stations)</i>. https://www.climatechangeinaustralia.gov.au/en/obtain-data/download-datasets/#FFDI
+                </li>
+                <li class="apa-reference">
+                    Smith, J. (2025). <i>Australian Annual Bushfire Area (1990–2020)</i>. Kaggle. https://www.kaggle.com/datasets/johnathansmith7528/australian-annual-bushfire-area-19902020
+                </li>
+                <li class="apa-reference">
+                    Australian Bureau of Statistics. (2024, March). <i>Sun protection behaviours</i>. https://www.abs.gov.au/statistics/health/health-conditions-and-risks/sun-protection-behaviours/latest-release
+                </li>
+                <li class="apa-reference">
+                    Australian Bureau of Statistics. (2025, June). <i>Australian Agriculture: Livestock</i>. https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-livestock/latest-release
+                </li>
+                 <li class="apa-reference">
+                    Australian Bureau of Statistics. (2020, May). <i>Water Use on Australian Farms</i>. https://www.abs.gov.au/statistics/industry/agriculture/water-use-australian-farms/2018-19
+                </li>
+                <li class="apa-reference">
+                    Australian Bureau of Statistics. (2020, March). <i>Measuring natural disasters in the Australian economy</i>. https://www.abs.gov.au/statistics/research/measuring-natural-disasters-australian-economy
+                </li>
+            </ul>
+        </p>
 
     <script src="vegaembed.js"></script>
 </body>
 </html>
+

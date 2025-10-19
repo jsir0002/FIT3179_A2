@@ -1,10 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Australians' Sunburn Levels By State/Territory",
   "data": {
     "url": "data/abs_sunburn.csv"
   },
-  "width": 800,
+  "width": 700,
   "height": 450,
   "params": [
     {
@@ -42,6 +41,13 @@
       "field": "Percentage(%)",
       "type": "quantitative",
       "title": "Percentage (%)"
-    }
+    },
+    "color":{"field": "Type", "scale":{"range": ["#fd8d3c", "#fd8d3c","#ffeda0","#ffeda0"]}, "legend": null},
+    "tooltip": [
+      {"field": "State"},
+      {"field": "Type"},
+      {"field": "Percentage(%)", "format": ".2f"}
+    ]
   }
+  
 }

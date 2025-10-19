@@ -3,10 +3,6 @@
   "width": 800,
   "height": 450,
   "background": "white",
-  "title": {
-    "text": "Average Monthly/Annual Maximum Temperature in Australia",
-    "anchor": "middle"
-  },
   "params": [
     {
       "name": "selectedMonth",
@@ -72,13 +68,14 @@
         "color": {
           "field": "tempValue",
           "type": "quantitative",
+          "title": "Temperature (°C)",
          
           "scale": {
             "domain": [20, 35],
             "range": ["#ffeda0", "#feb24c", "#f03b20"],
             "type": "threshold"
           },
-          "legend": {"symbolType": "square"}
+          "legend": {"symbolType": "square", "labelExpr": "(datum.label === null ? '0' : datum.label) + '°C'"}
         },
         "tooltip": [
           {
@@ -89,7 +86,7 @@
           {
             "field": "tempValue",
             "type": "quantitative",
-            
+            "title": "Average Max Temp (°C)",
             "format": ".1f"
           }
         ]

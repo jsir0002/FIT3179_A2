@@ -1,13 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Livestock Revenue in Australia: Composition Over Time",
   "data": {
     "url": "data/livestock.csv",
     "format": {
       "type": "csv"
     }
   },
-  "width": 800,
+  "width": 700,
   "height": 450,
   "params": [
     {
@@ -21,7 +20,7 @@
           "Sheep & Lambs",
           "Wool"
         ],
-        "name": "Export Type: "
+        "name": "Filter Export Type: "
       }
     }
   ],
@@ -42,7 +41,7 @@
       "axis": {
         "format": "%Y",
         "tickCount": "year",
-        "labelAngle": -45
+        "labelAngle": 0
       }
     },
     "y": {
@@ -54,7 +53,7 @@
     "color": {
       "field": "ExportType",
       "type": "nominal",
-      "title": "Livestock Type",
+      "title": "Export Type",
       "scale": {
         "domain": [
           "Cattle & Calves",
@@ -77,11 +76,11 @@
   "layer": [
     {
 
-      "mark": {"type": "line", "opacity": 0.7}
+      "mark": {"type": "line", "opacity": 1}
     },
     {
 
-      "mark": {"type": "point", "filled": true, "size": 60, "strokeWidth": 1, "stroke": "white"}
+      "mark": {"type": "point", "filled": true, "size": 60, "strokeWidth": 1, "stroke": "white", "opacity": 1}
     }
   ]
 }
